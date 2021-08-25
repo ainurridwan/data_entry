@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <script defer src="../assets/fontawesome/js/brands.js"></script>
+    <script defer src="../assets/fontawesome/js/solid.js"></script>
+    <script defer src="../assets/fontawesome/js/fontawesome.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="text-center">PERPUSTAKAAN UMUM</h1>
+            <p class="text-center">JL. Sudirman No. 999 Telp : (021)2345678</p>
+            <div class="salam">
+                <p class="text-start">Hai user!</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="sidebar col-2">
+                <div class="dropdown">
+                    <button class="text-start btn" type="button"><a href="home.html">Beranda</a></button>
+                    <button class="text-start btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Data Master
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="data_anggota.html">Data Anggota</a></li>
+                      <li><a class="dropdown-item" href="data_buku.html">Data Buku</a></li>
+                    </ul>
+                    <button class="text-start btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Data Transaksi
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="data_transaksi_peminjaman.html">Transaksi Peminjaman</a></li>
+                        <li><a class="dropdown-item" href="#">Transaksi Pengembalian</a></li>
+                    </ul>
+                    <button class="text-start btn" type="button"><a href="#">Layanan Transaksi</a></button>
+                    <button class="text-start btn" type="button"><a href="#">Logout</a></button>
+                  </div>
+            </div>
+            <div class="conten col">
+                <h1 class="text-center">Data Anggota</h1>
+                <button class="btn"><a href="tambah_data_anggota.html">Tambah data Anggota</a></button>
+                <form class="example" action="action_page.php">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">ID Anggota</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Foto</th>
+                        <th scope="col">Jenis Kelamin</th>
+                        <th scope="col">Alamat</th>
+                        <th scope="col">opsi</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>ID123</td>
+                        <td>Ainur Ridwan</td>
+                        <td><img src="../assets/images/poto_anggota/me.jpg" alt=""></td>
+                        <td>Laki-laki</td>
+                        <td>Jl Cipedak Raya</td>
+                        <td>
+                            <button class="btn btn-edit"><a href="#">edit</a></button>
+                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
+                            <button class="btn btn-delete"><a href="#">delete</a></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>ID123</td>
+                        <td>Ainur Ridwan</td>
+                        <td><img src="../assets/images/poto_anggota/me.jpg" alt=""></td>
+                        <td>Laki-laki</td>
+                        <td>Jl Cipedak Raya</td>
+                        <td>
+                            <button class="btn btn-edit"><a href="#">edit</a></button>
+                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
+                            <button class="btn btn-delete"><a href="#">delete</a></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>ID123</td>
+                        <td>Ainur Ridwan</td>
+                        <td><img src="../assets/images/poto_anggota/me.jpg" alt=""></td>
+                        <td>Laki-laki</td>
+                        <td>Jl Cipedak Raya</td>
+                        <td>
+                            <button class="btn btn-edit"><a href="#">edit</a></button>
+                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
+                            <button class="btn btn-delete"><a href="#">delete</a></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>ID123</td>
+                        <td>Ainur Ridwan</td>
+                        <td><img src="../assets/images/poto_anggota/me.jpg" alt=""></td>
+                        <td>Laki-laki</td>
+                        <td>Jl Cipedak Raya</td>
+                        <td>
+                            <button class="btn btn-edit"><a href="#">edit</a></button>
+                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
+                            <button class="btn btn-delete"><a href="#">delete</a></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>ID123</td>
+                        <td>Ainur Ridwan</td>
+                        <td><img src="../assets/images/poto_anggota/me.jpg" alt=""></td>
+                        <td>Laki-laki</td>
+                        <td>Jl Cipedak Raya</td>
+                        <td>
+                            <button class="btn btn-edit"><a href="#">edit</a></button>
+                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
+                            <button class="btn btn-delete"><a href="#">delete</a></button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
