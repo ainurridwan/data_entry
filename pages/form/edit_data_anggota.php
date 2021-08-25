@@ -48,10 +48,17 @@ while($row = mysqli_fetch_array($result)){
                             <label for="exampleFormControlInput1" class="form-label">Jenis Kelamin</label>
                         </div>
                         <div class="col">
+<<<<<<< HEAD
                             <select class="form-select form-select-sm" aria-label=".form-select-sm example" name= "jenis_kelamin">
                                 <option value="laki-laki" <?php echo ($jenis_kelamin == 'laki-laki') ? 'selected' : ''; ?>>Laki-laki</option>
                                 <option value="perempuan" <?php echo ($jenis_kelamin == 'perempuan') ? 'selected' : ''; ?>>Perempuan</option>
                             </select>
+=======
+                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name= "jenis_kelamin" value="<?php echo $jenis_kelamin ?>">
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="perempuan">Wanita</option>
+                              </select>
+>>>>>>> c78653dc5afef551bd9c9e4b7e2443a6e3bbdc78
                         </div>
                     </div>
 

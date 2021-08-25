@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include "../../modules/db_connection.php";
 
@@ -5,6 +6,8 @@ $sql = "SELECT * FROM table_buku";
 $result =  mysqli_query($con, $sql);
 $no = 1;
 ?>
+=======
+>>>>>>> c78653dc5afef551bd9c9e4b7e2443a6e3bbdc78
 <?php include "../template/header.php"; ?>
 <?php include "../template/sidebar.php"; ?>
 
@@ -30,6 +33,7 @@ $no = 1;
                       </tr>
                     </thead>
                     <tbody>
+<<<<<<< HEAD
                       <?php 
                       while ($row = mysqli_fetch_array($result)) {
                         $idbuku = $row['bukustr']."".$row['id_buku'];
@@ -51,6 +55,83 @@ $no = 1;
                         $no++;
                       }
                       ?>
+=======
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>ID123</td>
+                        <td>ini judul buku</td>
+                        <td><img src="../../assets/images/cover book/cover book sample.jpg" alt="cover book"></td>
+                        <td>Gramedia</td>
+                        <td>Ainur Ridwan</td>
+                        <td>2021</td>
+                        <td>Computer</td>
+                        <td>
+                            <button class="btn btn-edit"><a href="#">edit</a></button>
+                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
+                            <button class="btn btn-delete"><a href="#">delete</a></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>ID123</td>
+                        <td>ini judul buku</td>
+                        <td><img src="../../assets/images/cover book/cover book sample.jpg" alt="cover book"></td>
+                        <td>Gramedia</td>
+                        <td>Ainur Ridwan</td>
+                        <td>2021</td>
+                        <td>Computer</td>
+                        <td>
+                            <button class="btn btn-edit"><a href="#">edit</a></button>
+                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
+                            <button class="btn btn-delete"><a href="#">delete</a></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>ID123</td>
+                        <td>ini judul buku</td>
+                        <td><img src="../../assets/images/cover book/cover book sample.jpg" alt="cover book"></td>
+                        <td>Gramedia</td>
+                        <td>Ainur Ridwan</td>
+                        <td>2021</td>
+                        <td>Computer</td>
+                        <td>
+                            <button class="btn btn-edit"><a href="#">edit</a></button>
+                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
+                            <button class="btn btn-delete"><a href="#">delete</a></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>ID123</td>
+                        <td>ini judul buku</td>
+                        <td><img src="../../assets/images/cover book/cover book sample.jpg" alt="cover book"></td>
+                        <td>Gramedia</td>
+                        <td>Ainur Ridwan</td>
+                        <td>2021</td>
+                        <td>Computer</td>
+                        <td>
+                            <button class="btn btn-edit"><a href="#">edit</a></button>
+                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
+                            <button class="btn btn-delete"><a href="#">delete</a></button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>ID123</td>
+                        <td>ini judul buku</td>
+                        <td><img src="../../assets/images/cover book/cover book sample.jpg" alt="cover book"></td>
+                        <td>Gramedia</td>
+                        <td>Ainur Ridwan</td>
+                        <td>2021</td>
+                        <td>Computer</td>
+                        <td>
+                            <button class="btn btn-edit"><a href="#">edit</a></button>
+                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
+                            <button class="btn btn-delete"><a href="#">delete</a></button>
+                        </td>
+                      </tr>
+>>>>>>> c78653dc5afef551bd9c9e4b7e2443a6e3bbdc78
                     </tbody>
                   </table>
                   <nav aria-label="Page navigation example">
