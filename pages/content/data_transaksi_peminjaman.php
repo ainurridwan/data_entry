@@ -1,3 +1,23 @@
+<?php 
+  include_once "../../modules/db_connection.php";
+
+  // fetch data from table transaksi
+  $sql = "SELECT *
+          FROM table_anggota
+          JOIN table_data_transaksi
+          ON table_anggota.idno = table_data_transaksi.Anggota_id
+          JOIN table_buku
+          ON table_buku.id_buku = table_data_transaksi.Buku_id
+          ";
+  $result = mysqli_query($con, $sql);
+  $no = 1;
+
+  $transactions = array();
+  while ($transaction = mysqli_fetch_array($result)) {
+    $transactions[] = $transaction;
+  }
+?>
+
 <?php include "../template/header.php"; ?>
 <?php include "../template/sidebar.php"; ?>
 
@@ -18,80 +38,28 @@
                         <th scope="col">ID Buku</th>
                         <th scope="col">Judul Buku</th>
                         <th scope="col">Tanggal Pinjam</th>
+                        <th scope="col">Tanggal Pengembalian</th>
                         <th scope="col">opsi</th>
                       </tr>
                     </thead>
                     <tbody>
+                      <?php foreach($transactions as $row){ ?>
                       <tr>
-                        <th scope="row">1</th>
-                        <td>TR123</td>
-                        <td>AN123</td>
-                        <td>Ainur Ridwan</td>
-                        <td>BK123</td>
-                        <td>Imajinasi melawan Realita</td>
-                        <td>19-08-2021</td>
+                        <th scope="row"><?= $no; ?></th>
+                        <td>TR<?= $row['id_transaksi'] ;?></td>
+                        <td>AN<?=  $row['idno'];?></td>
+                        <td><?= $row['nama'] ?></td>
+                        <td>BK<?= $row['id_buku'] ?></td>
+                        <td><?= $row['judul_buku'] ?></td>
+                        <td><?= $row['tanggal_pinjam'] ?></td>
+                        <td><?= $row['tanggal_pengembalian'] ?></td>
                         <td>
-                            <button class="btn btn-edit"><a href="#">edit</a></button>
+                            <button class="btn btn-edit"><a href="../form/edit_data_transaksi.php?id=<?= $row['id_transaksi'] ?>">edit</a></button>
                             <button class="btn btn-cetak"><a href="#">cetak</a></button>
                             <button class="btn btn-delete"><a href="#">delete</a></button>
                         </td>
                       </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>TR123</td>
-                        <td>AN123</td>
-                        <td>Ainur Ridwan</td>
-                        <td>BK123</td>
-                        <td>Imajinasi melawan Realita</td>
-                        <td>19-08-2021</td>
-                        <td>
-                            <button class="btn btn-edit"><a href="#">edit</a></button>
-                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
-                            <button class="btn btn-delete"><a href="#">delete</a></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>TR123</td>
-                        <td>AN123</td>
-                        <td>Ainur Ridwan</td>
-                        <td>BK123</td>
-                        <td>Imajinasi melawan Realita</td>
-                        <td>19-08-2021</td>
-                        <td>
-                            <button class="btn btn-edit"><a href="#">edit</a></button>
-                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
-                            <button class="btn btn-delete"><a href="#">delete</a></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">4</th>
-                        <td>TR123</td>
-                        <td>AN123</td>
-                        <td>Ainur Ridwan</td>
-                        <td>BK123</td>
-                        <td>Imajinasi melawan Realita</td>
-                        <td>19-08-2021</td>
-                        <td>
-                            <button class="btn btn-edit"><a href="#">edit</a></button>
-                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
-                            <button class="btn btn-delete"><a href="#">delete</a></button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th scope="row">5</th>
-                        <td>TR123</td>
-                        <td>AN123</td>
-                        <td>Ainur Ridwan</td>
-                        <td>BK123</td>
-                        <td>Imajinasi melawan Realita</td>
-                        <td>19-08-2021</td>
-                        <td>
-                            <button class="btn btn-edit"><a href="#">edit</a></button>
-                            <button class="btn btn-cetak"><a href="#">cetak</a></button>
-                            <button class="btn btn-delete"><a href="#">delete</a></button>
-                        </td>
-                      </tr>
+                      <?php $no++; } ?>
                     </tbody>
                   </table>
                   <nav aria-label="Page navigation example">
