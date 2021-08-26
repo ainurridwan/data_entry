@@ -14,29 +14,15 @@
         }
         include_once "../../../modules/db_connection.php"; 
 
-<<<<<<< HEAD
         // insert anggota data into table
-=======
-        // insert user data into table
->>>>>>> c78653dc5afef551bd9c9e4b7e2443a6e3bbdc78
         $result = mysqli_query($con, "INSERT INTO table_anggota(nama, foto, jenis_kelamin, alamat)
                             VALUES ('$nama', '$foto', '$jenis_kelamin', '$alamat')
                             ");
         echo "
-<<<<<<< HEAD
             <script>
                 window.location.href = 'http://localhost/data_entry/pages/content/data_anggota.php';
             </script>
             ";
-            
-    
-=======
-                <script>
-                alert('data berhasil ditambahkan');
-                </script>
-            ";
-        header("location : /pages/content/data_anggota.php");
->>>>>>> c78653dc5afef551bd9c9e4b7e2443a6e3bbdc78
     }
 
 

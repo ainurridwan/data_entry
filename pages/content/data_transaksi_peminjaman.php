@@ -37,6 +37,7 @@
                         <th scope="col">Nama</th>
                         <th scope="col">ID Buku</th>
                         <th scope="col">Judul Buku</th>
+                        <th scope="col">Status peminjaman</th>
                         <th scope="col">Tanggal Pinjam</th>
                         <th scope="col">Tanggal Pengembalian</th>
                         <th scope="col">opsi</th>
@@ -51,12 +52,13 @@
                         <td><?= $row['nama'] ?></td>
                         <td>BK<?= $row['id_buku'] ?></td>
                         <td><?= $row['judul_buku'] ?></td>
+                        <td><?= $row['status_peminjaman'] ?></td>
                         <td><?= $row['tanggal_pinjam'] ?></td>
                         <td><?= $row['tanggal_pengembalian'] ?></td>
                         <td>
                             <button class="btn btn-edit"><a href="../form/edit_data_transaksi.php?id=<?= $row['id_transaksi'] ?>">edit</a></button>
                             <button class="btn btn-cetak"><a href="#">cetak</a></button>
-                            <button class="btn btn-delete"><a href="#">delete</a></button>
+                            <button class="btn btn-delete"><a href="../../modules/controllers/data_transaksi_peminjaman/delete.php?id=<?= $row['id_transaksi'] ?>">delete</a></button>
                         </td>
                       </tr>
                       <?php $no++; } ?>

@@ -33,6 +33,7 @@ $transactions = array();
     $id_anggota = $row['Anggota_id'];
     $id_buku = $row['Buku_id'];
     $id = $row['id_transaksi'];
+    $status_peminjaman = $row['status_peminjaman'];
     $tanggal_pinjam = $row['tanggal_pinjam'];
     $tanggal_pengembalian = $row['tanggal_pengembalian'];
   }
@@ -44,7 +45,7 @@ $transactions = array();
 <div class="conten-form">
             <h1 class="text-center">Edit data anggota</h1>
 
-            <form action="../../modules/controllers/data_anggota/edit.php" method="POST" name="update" enctype="multipart/form-data">
+            <form action="../../modules/controllers/data_transaksi_peminjaman/edit.php" method="POST" name="update" enctype="multipart/form-data">
                 <div class="mb-3">
                     
                     <div class="row mt-3 mb-3">
@@ -94,14 +95,27 @@ $transactions = array();
 
                     <div class="row mt-3 mb-3">
                         <div class="col-2">
-                            <label for="exampleFormControlInput1" class="form-label">Tanggal Peminajaman</label>
+                            <label for="exampleFormControlInput1" class="form-label">Status Peminjaman</label>
                         </div>
                         <div class="col">
-                            <input type="date" class="form-control" id="exampleFormControlInput1" name="nama" value= "<?= $tanggal_pinjam ?>" >
+                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="status_peminjaman">
+                                <option value="belum dikembalikan" <?= ($status_peminjaman == 'belum dikembalikan') ? 'selected' : '';?> >Belum dikembalikan</option>
+                                <option value="sudah dikembalikan" <?= ($status_peminjaman == 'sudah dikembalikan') ? 'selected' : '';?>>sudah dikembalikan</option>
+                                <option value="hilang atau rusak" <?= ($status_peminjaman == 'hilang atau rusak') ? 'selected' : '';?>>hilang atau rusak</option>
+                            </select>
                         </div>
                     </div>
 
-                    <input type="hidden" name="id_transaksi" value="<?= $id ?>">
+                    <div class="row mt-3 mb-3">
+                        <div class="col-2">
+                            <label for="exampleFormControlInput1" class="form-label">Tanggal Peminajaman</label>
+                        </div>
+                        <div class="col">
+                            <input type="date" class="form-control" id="exampleFormControlInput1" name="tanggal_pinjam" value= "<?= $tanggal_pinjam ?>" >
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="id" value="<?= $id ?>">
 
                     <button class="btn btn-info" type="submit button" name="update" value="submit button">Update</button>
                     
