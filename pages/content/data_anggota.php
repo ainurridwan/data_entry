@@ -2,10 +2,31 @@
 
 include_once "../../modules/db_connection.php"; 
 
+
+
+// pagination konfigurasi
+
+$jumlahDataPerhalaman = 5;
+
 // fetch all data anggota from database
-$sql = "SELECT * FROM table_anggota";
+$results = mysqli_query($con, "SELECT * FROM table_anggota");
+$jumlahData = mysqli_num_rows($results);
+$jumlahHalaman = ceil($jumlahData / $jumlahDataPerhalaman);
+$halamanAKtif = ( isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+// halaman aktif = 2, awalData = 5
+// halaman aktif = 3 , awalData = 9
+
+$awalData =  ($jumlahDataPerhalaman * $halamanAKtif) - $jumlahDataPerhalaman;
+
+// round pembulatan ke desimal terdekat
+// ceil pembulatan ke atas
+// floor pembulatan ke bawah
+
+$sql = "SELECT * FROM table_anggota LIMIT $awalData, $jumlahDataPerhalaman";
 $result = mysqli_query($con, $sql);
 $no = 1;
+
+
 ?>
 <?php include "../template/header.php"; ?>
 <?php include "../template/sidebar.php"; ?>
@@ -55,6 +76,11 @@ $no = 1;
                       ?>
                     </tbody>
                   </table>
+
+                  <!-- navigasi page -->
+                  <?php for($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+
+                  <?php endfor; ?>
                   <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
                       <li class="page-item disabled">
