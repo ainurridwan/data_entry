@@ -58,8 +58,9 @@ $no = 1;
                           $image = $row['foto'];
                           $id_anggota = $row['anggotastr']. "" . $row['idno'] ;
                           $id = $row['idno'];
+                          $awalData +=1;
                           echo "<tr>";
-                          echo "<th scope='row'>$no</th>";
+                          echo "<th scope='row'>$awalData</th>";
                           echo "<td>" . $id_anggota . "</td>";
                           echo "<td>" . $row["nama"] . "</td>";
                           echo "<td>" . "<img src='../../assets/images/poto_anggota/$image' alt='$image'></img>" . "</td>";
@@ -71,29 +72,41 @@ $no = 1;
                           echo " ";
                           echo "<button class='btn btn-delete '>" . "<a href='../../modules/controllers/data_anggota/delete.php?id=$row[idno]' onclick='return confirm(`Apakah anda yakin untuk menghapus data ini?`);'>" . "delete</a></button></td>";
                           echo "</tr>";
-                          $no++;
                       }
                       ?>
                     </tbody>
                   </table>
 
                   <!-- navigasi page -->
-                  <?php for($i = 1; $i <= $jumlahHalaman; $i++) : ?>
 
-                  <?php endfor; ?>
                   <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center">
-                      <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                      </li>
-                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <?php if( $halamanAKtif > 1) : ?>
                       <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
+                        <a class="page-link" href="?halaman=<?= $halamanAKtif - 1 ?>" aria-disabled="true">Previous</a>
                       </li>
+                      <?php else : ?>
+                      <li class="page-item disabled">
+                        <a class="page-link" href="?halaman" tabindex="-1" aria-disabled="true">Previous</a>
+                      </li>
+                      <?php endif ; ?>
+                      <?php  for($i=1; $i <= $jumlahHalaman; $i++) : ?>
+                      <li class="page-item"><a class="page-link" href="?halaman=<?= $i ?>"><?= $i ?></a></li>
+                      <?php  endfor; ?>
+                      
+                      <?php if( $halamanAKtif < $jumlahHalaman) : ?>
+                      <li class="page-item">
+                        <a class="page-link" href="?halaman<?= $halamanAKtif + 1 ?>">Next</a>
+                      </li>
+                      <?php else : ?>
+                      <li class="page-item disabled">
+                        <a class="page-link" href="?halaman<?= $halamanAKtif + 1 ?>">Next</a>
+                      </li>  
+                      <?php endif; ?>
                     </ul>
                   </nav>
+
+                  <!-- end navigasi page -->
             </div>
         </div>
     </div>
