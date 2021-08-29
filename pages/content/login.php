@@ -24,6 +24,14 @@ if(isset($_SESSION["login"])){
     <script defer src="../../assets/js/script.js"></script>
     <!-- fontawesome -->
 </head>
+<div class="container">
+        <div class="header">
+            <h1 class="text-center">PERPUSTAKAAN UMUM</h1>
+            <p class="text-center">JL. Sudirman No. 999 Telp : (021)2345678</p>
+            <div class="salam">
+                <p class="text-start">Selamat datang!</p>
+            </div>
+        </div>
 
 <?php
 include '../../modules/db_connection.php';
