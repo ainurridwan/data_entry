@@ -5,6 +5,7 @@ $password = '';
 $dbName = 'db_data_entry';
 
 $con = mysqli_connect($server, $user , $password , $dbName);
+global $con;
 
 
 if(mysqli_connect_errno()){

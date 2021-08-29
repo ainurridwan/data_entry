@@ -1,13 +1,9 @@
 <?php 
 
-include_once "modules/db_connection.php";
-// Mengambil id dari url
+$password = password_hash($plaintextPass, PASSWORD_DEFAULT);
+$password2 = password_hash($plaintextPass, PASSWORD_DEFAULT);
 
-
-
-// fetch user data based on id
-$result = mysqli_query($con, "SELECT * FROM 'table_anggota' WHERE idno=101");
-
+echo $password . "\n" . $password2;
 
 
 ?>

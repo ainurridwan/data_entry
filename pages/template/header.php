@@ -16,7 +16,7 @@
     <script defer src="../../assets/js/script.js"></script>
     <!-- fontawesome -->
 </head>
-
+<body>
 <div class="container">
         <div class="header">
             <h1 class="text-center">PERPUSTAKAAN UMUM</h1>
