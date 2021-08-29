@@ -34,9 +34,9 @@
 <div class="conten col">
                 <h1 class="text-center">Data Transaksi Peminjaman</h1>
                 <button class="btn"><a href="../form/tambah_data_transaksi.php">Tambah transaksi</a></button>
-                <form class="example" action="action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                <form class="example" action="search.php" method="post">
+                    <input style="width:500px;" type="text" placeholder="Search.." name="keyword" autofocus autocomplete="off">
+                    <button type="submit" name="cari"><i class="fa fa-search"></i></button>
                 </form>
                 <table class="table table-hover">
                     <thead>

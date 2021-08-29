@@ -33,7 +33,20 @@ $awalData =  ($jumlahDataPerhalaman * $halamanAKtif) - $jumlahDataPerhalaman;
 // floor pembulatan ke bawah
 
 $sql = "SELECT * FROM table_anggota LIMIT $awalData, $jumlahDataPerhalaman";
-$result = mysqli_query($con, $sql);
+
+if (isset($_GET['cari'])) {
+  $search = $_GET['keyword'];
+  $sql = "SELECT * FROM table_anggota WHERE nama like '%$search%' OR 
+          idno like '%$search%' OR 
+          alamat like '%$search%'";
+  $result = mysqli_query($con, $sql);
+  if ($result === 0) {
+    echo "data tidak ditemukan";
+  }
+}else {
+  $result = mysqli_query($con, $sql);
+}
+
 $no = 1;
 
 
@@ -46,9 +59,10 @@ $no = 1;
 <div class="conten col">
                 <h1 class="text-center">Data Anggota</h1>
                 <button class="btn"><a href="../form/tambah_data_anggota.php">Tambah data Anggota</a></button>
-                <form class="example" action="action_page.php">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+                
+                <form class="example" action="" method="get">
+                    <input style="width:500px;" type="text" placeholder="Search.." name="keyword" autofocus autocomplete="off">
+                    <button type="submit" name="cari"><i class="fa fa-search"></i></button>
                 </form>
                 <table class="table table-hover">
                     <thead>

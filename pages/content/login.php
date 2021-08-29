@@ -74,7 +74,7 @@ if (isset($_POST["login"])) {
             <?php endif ; ?>
             <div class="mb-3">
               <label for="username" class="form-label">Username</label>
-              <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" autofocus>
               <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
             </div>
             <div class="mb-3">
