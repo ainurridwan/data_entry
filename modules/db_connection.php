@@ -11,5 +11,5 @@ global $con;
 if(mysqli_connect_errno()){
     echo "Failed to connect to MySQL" . mysqli_connect_errno();
 } else {
-    echo "database connected";
+    echo "<script>console.log('database terkoneksi');</script>";
 }
