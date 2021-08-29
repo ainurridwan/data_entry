@@ -11,7 +11,13 @@ _Menjalankan website_
 # Created by
 *Ainur Ridwan*
 
+## Social Media
 **visit me on my github**
 https://github.com/ainurridwan
+
+**Connect with my twitter**
+https://twitter.com/ainurridwan_
+
+
 
 
