@@ -68,7 +68,7 @@
                         <td>
                             <button class="btn btn-edit"><a href="../form/edit_data_transaksi.php?id=<?= $row['id_transaksi'] ?>">edit</a></button>
                             <button class="btn btn-cetak"><a href="#">cetak</a></button>
-                            <button class="btn btn-delete"><a href="../../modules/controllers/data_transaksi_peminjaman/delete.php?id=<?= $row['id_transaksi'] ?>">delete</a></button>
+                            <button class="btn btn-delete"><a href="../../modules/controllers/data_transaksi_peminjaman/delete.php?id=<?= $row['id_transaksi'] ?>" onclick='return confirm(`Apakah anda yakin untuk menghapus d>ata ini?`);'>delete</a></button>
                         </td>
                       </tr>
                       <?php $no++; } ?>

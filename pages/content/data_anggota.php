@@ -94,7 +94,7 @@ $no = 1;
                           echo " ";
                           echo "<button class='btn btn-cetak '>" . "<a href='../../modules/controllers/data_anggota/cetak.php'>" . "cetak</a></button>";
                           echo " ";
-                          echo "<button class='btn btn-delete '>" . "<a href='../../modules/controllers/data_anggota/delete.php?id=$row[idno]' onclick='return confirm(`Apakah anda yakin untuk menghapus data ini?`);'>" . "delete</a></button></td>";
+                          echo "<button class='btn btn-delete '>" . "<a href='../../modules/controllers/data_anggota/delete.php?id=$row[idno]' onclick='return confirm(`Apakah anda yakin untuk menghapus d>ata ini?`);'" . "delete</a></button></td>";
                           echo "</tr>";
                       }
                       ?>
