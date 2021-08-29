@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +23,6 @@
             <h1 class="text-center">PERPUSTAKAAN UMUM</h1>
             <p class="text-center">JL. Sudirman No. 999 Telp : (021)2345678</p>
             <div class="salam">
-                <p class="text-start">Hai user!</p>
+                <p class="text-start">Selamat datang! <?= $_SESSION['username'] ?></p>
             </div>
         </div>

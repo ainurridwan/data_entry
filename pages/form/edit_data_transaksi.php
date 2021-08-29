@@ -1,4 +1,17 @@
-<?php include "../template/header.php"; ?>
+<?php 
+session_start();
+
+if ( !isset($_SESSION["login"])){
+    echo "<script>
+        alert('silahkan login terlebih dahulu');
+        window.location.href = 'http://localhost/data_entry/pages/content/login.php';
+    </script>";
+    exit;
+}
+
+include "../template/header.php"; 
+
+?>
 
 <?php
 // Display selected user based on id

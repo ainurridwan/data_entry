@@ -1,4 +1,14 @@
 <?php
+session_start();
+
+if ( !isset($_SESSION["login"])){
+    echo "<script>
+        alert('silahkan login terlebih dahulu');
+        window.location.href = 'http://localhost/data_entry/pages/content/login.php';
+    </script>";
+    exit;
+}
+
 include "../../modules/db_connection.php";
 
 $sql = "SELECT * FROM table_buku";

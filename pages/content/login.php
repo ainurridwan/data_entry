@@ -1,9 +1,36 @@
 <?php 
-include '../template/header.php' ;
+session_start();
+if(isset($_SESSION["login"])){
+  echo "<script>
+          window.location.href = 'http://localhost/data_entry/pages/content/home.php';
+        </script>";
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <!-- bootstrap style -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <!-- style -->
+
+    <script defer src="../../assets/fontawesome/js/brands.js"></script>
+    <script defer src="../../assets/fontawesome/js/solid.js"></script>
+    <script defer src="../../assets/fontawesome/js/fontawesome.js"></script>
+    <script defer src="../../assets/js/script.js"></script>
+    <!-- fontawesome -->
+</head>
+
+<?php
 include '../../modules/db_connection.php';
 
 if (isset($_POST["login"])) {
   $username = $_POST["username"];
+  
   $password = $_POST["password"];
 
   $result = mysqli_query($con, "SELECT * FROM table_user WHERE username='$username'");
@@ -16,8 +43,12 @@ if (isset($_POST["login"])) {
   if( mysqli_num_rows($result) === 1){  
       // cek password
       $row = mysqli_fetch_assoc($result);
+      $_SESSION['username'] = $row['username'];
       // password verify kebalikan dari password hash (untuk mengecek apakah sama dengan stringnya atau tidak)
       if (password_verify($password, $row['password'])) {
+        // set session
+        $_SESSION['login'] = true;
+
         echo "<script>
           window.location.href = 'http://localhost/data_entry/pages/content/';
         </script>";

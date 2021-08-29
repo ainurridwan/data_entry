@@ -19,6 +19,6 @@
                         <li><a class="dropdown-item" href="#">Transaksi Pengembalian</a></li>
                     </ul>
                     <button class="text-start btn" type="button"><a href="#">Layanan Transaksi</a></button>
-                    <button class="text-start btn" type="button"><a href="#">Logout</a></button>
+                    <button class="text-start btn" type="button"><a href="../../modules/controllers/logout.php">Logout</a></button>
                   </div>
             </div>
