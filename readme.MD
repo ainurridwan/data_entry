@@ -13,9 +13,11 @@ _Menjalankan website_
 
 ## Social Media
 **visit me on my github**
+![github logo](https://image.flaticon.com/icons/png/512/25/25471.png)
 https://github.com/ainurridwan
 
 **Connect with my twitter**
+![twitter logo](https://image.flaticon.com/icons/png/512/733/733579.png)
 https://twitter.com/ainurridwan_
 
 
